@@ -1,0 +1,37 @@
+Building from source is a great way to ensure you have the latest features and X11 support (for full-screen toggling). Since you are on Ubuntu, follow these steps to execute those GitHub instructions:
+## 1. Install the Build Tools
+First, grab the compilers and the cmake tool mentioned in the README:
+
+sudo apt update
+sudo apt install build-essential cmake pkg-config
+
+## 2. Install the Development Libraries
+These are the "headers" the compiler needs to build the software. Run this single command to get everything listed in your snippet:
+
+sudo apt install libssl-dev libplist-dev libavahi-compat-libdnssd-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libx11-dev
+
+## 3. Download and Build
+If you haven't downloaded the code yet, clone it from GitHub; otherwise, cd into the folder you already have.
+
+# Skip this first line if you already downloaded the source
+git clone https://github.com
+
+cd UxPlay
+mkdir build
+cd build
+cmake ..
+make
+
+## 4. Install and Run
+Once the make command finishes without errors, install the binary to your system:
+
+sudo make install
+
+## 5. One Final Step (Crucial)
+The build process installs the program, but you still need the GStreamer plugins to actually see the video and hear audio (as mentioned in the "Troubleshooting" part of the GitHub page):
+
+#Source:https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c
+sudo apt install apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+
+To start mirroring: Just type uxplay in your terminal.
+
