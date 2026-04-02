@@ -14,7 +14,7 @@ sudo apt install libssl-dev libplist-dev libavahi-compat-libdnssd-dev libgstream
 If you haven't downloaded the code yet, clone it from GitHub; otherwise, cd into the folder you already have.
 
 # Skip this first line if you already downloaded the source
-git clone https://github.com
+git clone https://github.com/antimof/UxPlay.git
 
 cd UxPlay
 mkdir build
